@@ -38,7 +38,7 @@ class User {
             if (!compare) {
                 throw new Error('Указан неверный пароль')
             }
-            const token = makeJwt(user.id, user.email, user.role)
+            const token = makeJwt(user.id, user.email, "ADMIN"/*user.role*/)
             return res.json({token})
         } catch(e) {
             next(AppError.badRequest(e.message))
@@ -119,10 +119,3 @@ class User {
 }
 
 export default new User()
-
-
-    // async check(req, res, next) {
-    //     res.status(200).send('Проверка авторизации')
-    // }
-
-    

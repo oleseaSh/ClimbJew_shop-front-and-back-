@@ -1,0 +1,57 @@
+### Регистрация нового пользователя
+POST /api/user/signup HTTP/1.1
+Host: localhost:7000
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "user@mail.ru",
+    "password": "qwerty"
+}
+
+### Аутентификация (вход) пользователя
+POST /api/user/login HTTP/1.1
+Host: localhost:7000
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "user@mail.ru",
+    "password": "qwerty"
+}
+
+### Список всех пользователей
+GET /api/user/getall HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQG1haWwucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc4NzIxNDUsImV4cCI6MTcxNzk1ODU0NX0.AEiLDNIxHO5i6GU0wdZ9UjM9i6adMxqZwx_X4wF9OMM
+Host: localhost:7000
+
+### Получить одного пользователя
+GET /api/user/getone/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQG1haWwucnUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcxNzg3MTg4NywiZXhwIjoxNzE3OTU4Mjg3fQ.kkqYtz7cpgU4tSY8Mm9RoVIsCczs_oj23RkQDKE5jVE
+Host: localhost:7000
+
+### Создать нового пользователя
+POST /api/user/create HTTP/1.1
+Host: localhost:7000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQG1haWwucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc4NzIzMzUsImV4cCI6MTcxNzk1ODczNX0.KpbvZ8OoVGI2iNo5LfWVIB9Ia1LIwShd2unAB56q4MU
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "admin@mail.ru",
+    "password": "qwerty",
+    "role": "ADMIN"
+}
+
+### Обновить пользователя
+PUT /api/user/update/1 HTTP/1.1
+Host: localhost:7000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQG1haWwucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc4NzIzMzUsImV4cCI6MTcxNzk1ODczNX0.KpbvZ8OoVGI2iNo5LfWVIB9Ia1LIwShd2unAB56q4MU
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "updated@mail.ru",
+    "password": "qwerty(updated)"
+}
+
+### Удалить пользователя
+DELETE /api/user/delete/2 HTTP/1.1
+Host: localhost:7000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyQG1haWwucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTc4NzIzMzUsImV4cCI6MTcxNzk1ODczNX0.KpbvZ8OoVGI2iNo5LfWVIB9Ia1LIwShd2unAB56q4MU

@@ -6,6 +6,8 @@ import cors from 'cors'
 import fileUpload from 'express-fileupload'
 import router from './routes/index.js'
 import ErrorHandler from './middleware/ErrorHandler.js'
+import cookieParser from 'cookie-parser'
+
 
 
 const PORT = process.env.PORT || 5001
@@ -24,6 +26,8 @@ app.use('/api', router)
 
 // обработка ошибок
 app.use(ErrorHandler)
+
+app.use(cookieParser(process.env.SECRET_KEY))
 
 
 
